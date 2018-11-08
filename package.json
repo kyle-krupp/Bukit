@@ -19,6 +19,7 @@
 		"passport-local": "^1.0.0",
 		"react": "^15.5.4",
 		"react-dom": "^15.5.4",
+		"react-materialize": "^2.4.8",
 		"react-router-dom": "^4.1.2"
 	},
 	"devDependencies": {
