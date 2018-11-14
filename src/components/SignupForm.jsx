@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import 'materialize-css/dist/css/materialize.min.css'
 
 class SignupForm extends Component {
 	constructor() {
@@ -45,7 +46,7 @@ class SignupForm extends Component {
 		}
 		return (
 			<div className="SignupForm">
-				<h1>Signup form</h1>
+				<h1>Signup</h1>
 				<label htmlFor="username">Username: </label>
 				<input
 					type="text"

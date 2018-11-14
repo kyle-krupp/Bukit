@@ -4,13 +4,13 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 let MONGO_URL
-const MONGO_LOCAL_URL = 'mongodb://localhost/mern-passport'
+const MONGO_LOCAL_URL = 'mongodb://bukit:bukit1@ds031968.mlab.com:31968/bukit'
 
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI)
-	MONGO_URL = 'mongodb://heroku_mtln19hq:heroku_mtln19hq"@ds155213.mlab.com:55213/heroku_mtln19hq'
+	MONGO_URL = 'mongodb://bukit:bukit1@ds031968.mlab.com:31968/bukit'
 } else {
-	mongoose.connect('mongodb://root:root@localhost/admin?authSource=admin') // local mongo url
+	mongoose.connect('mongodb://bukit:bukit1@ds031968.mlab.com:31968/bukit') // local mongo url
 	MONGO_URL = MONGO_LOCAL_URL
 }
 
