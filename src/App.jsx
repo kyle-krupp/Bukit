@@ -6,6 +6,7 @@ import LoginForm from './components/Login/LoginForm'
 import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
+import 'materialize-css/dist/css/materialize.min.css'
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
@@ -31,17 +32,17 @@ const DisplayLinks = props => {
 				<ul className="nav">
 					<li className="nav-item">
 						<Link to="/" className="nav-link">
-							Home
+							Bukit
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link to="/login" className="nav-link">
-							login
+							Login
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link to="/signup" className="nav-link">
-							sign up
+							Sign-up
 						</Link>
 					</li>
 				</ul>
@@ -113,10 +114,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>This is the main App component</h1>
-				<Header user={this.state.user} />
+				
 				{/* LINKS to our different 'pages' */}
 				<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />
+				<Header user={this.state.user} />
 				{/*  ROUTES */}
 				{/* <Route exact path="/" component={Home} /> */}
 				<Route exact path="/" render={() => <Home user={this.state.user} />} />

@@ -22,3 +22,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.nav{
+  background-color: #fbc02d;
+}
+.navbar {
+  background-color:#fbc02d;
+}
+
+
+
+.body {
+  background-image: url(https://media.giphy.com/media/3o6ZtelrVAOD5EcmCQ/giphy.gif);
+}
