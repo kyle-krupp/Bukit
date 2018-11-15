@@ -1,0 +1,21 @@
+{
+    "username": "John Example",
+    "password": "password123",
+    "list": [
+        {
+            "city": "New York",
+            "notes": [
+                "This is my first note on New York City! Nunc sodales id odio id tincidunt. Nullam sollicitudin lobortis orci, vel maximus justo rutrum et. Nullam tempor, nibh id faucibus sollicitudin, erat est egestas sapien, id auctor nisi nibh sit amet elit. Ut bibendum suscipit eleifend. Donec vel urna eu nibh eleifend elementum.",
+                "In hac habitasse platea dictumst. Maecenas interdum accumsan sem vel consequat. Nullam semper ultricies nibh, et interdum sem semper a."
+            ]
+        },
+        {
+            "city": "Chicago",
+            "notes": [
+                "Curabitur aliquam velit eget elementum tincidunt. Proin nibh nisi, vestibulum a malesuada scelerisque, commodo eget augue.",
+                "Duis sed gravida diam, id fermentum nisi. Praesent dignissim tincidunt sapien id eleifend. Vivamus gravida quam eu diam vulputate dignissim. Vestibulum vitae varius augue, ac egestas enim. Donec tincidunt nibh id ornare congue. Sed a nibh quis felis pellentesque viverra ac ut eros.",
+                "Lorem Ipsum."
+            ]
+        }
+    ]
+}
