@@ -6,7 +6,7 @@ import LoginForm from './components/Login/LoginForm'
 import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
-import List from './components/List'
+import ListPage from './components/ListPage'
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
@@ -18,11 +18,17 @@ const DisplayLinks = props => {
 							Home
 						</Link>
 					</li>
+					<li className="nav-item">
+						<Link to="/dashboard" className="nav-link">
+							Dashboard
+							</Link>
+					</li>
 					<li>
 						<Link to="#" className="nav-link" onClick={props._logout}>
 							Logout
 						</Link>
 					</li>
+					
 				</ul>
 			</nav>
 		)
@@ -45,11 +51,7 @@ const DisplayLinks = props => {
 							Sign-up
 						</Link>
 					</li>
-					<li className="nav-item">
-						<Link to="/dashboard" className="nav-link">
-							Dashboard
-							</Link>
-					</li>
+					
 				</ul>
 			</nav>
 		)
@@ -136,6 +138,7 @@ class App extends Component {
 						/>}
 				/>
 				<Route exact path="/signup" component={SignupForm} />
+				<Route exact path="/dashboard" component={ListPage}/>
 				{/* <LoginForm _login={this._login} /> */}
 			</div>
 		)
