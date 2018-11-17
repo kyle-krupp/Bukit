@@ -6,7 +6,7 @@ import LoginForm from './components/Login/LoginForm'
 import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
-import 'materialize-css/dist/css/materialize.min.css'
+import List from './components/List'
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
@@ -44,6 +44,11 @@ const DisplayLinks = props => {
 						<Link to="/signup" className="nav-link">
 							Sign-up
 						</Link>
+					</li>
+					<li className="nav-item">
+						<Link to="/dashboard" className="nav-link">
+							Dashboard
+							</Link>
 					</li>
 				</ul>
 			</nav>
@@ -114,7 +119,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				
+
 				{/* LINKS to our different 'pages' */}
 				<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />
 				<Header user={this.state.user} />

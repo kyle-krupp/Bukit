@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import 'materialize-css/dist/css/materialize.min.css'
 
 class SignupForm extends Component {
 	constructor() {

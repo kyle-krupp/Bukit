@@ -1,10 +1,11 @@
+
 import React from 'react'
 // TODO - add proptypes
 
 const Header = props => {
 	let Greeting
 	if (props.user === null) {
-		Greeting = <p>Hello Guest</p>
+		Greeting = <p>Hello guest</p>
 	} else if (props.user.firstName) {
 		Greeting = (
 			<p>
