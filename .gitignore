@@ -1,3 +1,8 @@
+
+#ignore node modules
+
 node_modules
 
-/build
+# ignore build
+
+build/
