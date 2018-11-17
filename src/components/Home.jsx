@@ -1,7 +1,4 @@
 import React from 'react'
-import SignupForm from '../components/SignupForm'
-import 'materialize-css/dist/css/materialize.min.css'
-import './Comp.css'
 
 const Home = props => {
 	if (props.user) {
