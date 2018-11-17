@@ -35,5 +35,5 @@
 		"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
 		"prod": "export PORT=3006 && nodemon server/server.js"
 	},
-	"proxy": "http://localhost:8000"
+	"proxy": "http://localhost:8080"
 }

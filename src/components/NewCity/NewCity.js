@@ -1,5 +1,5 @@
-import React from "react";
-import "./NewCity.css";
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { Modal, Button, Input, Row, Icon } from "react-materialize";
 
 class NewCity extends React.Component {

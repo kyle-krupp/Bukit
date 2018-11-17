@@ -7,6 +7,8 @@ import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
 import ListPage from './components/ListPage'
+import user from './components/user.json';
+import NewCity from './components/NewCity';
 
 const DisplayLinks = props => {
 	if (props.loggedIn) {
