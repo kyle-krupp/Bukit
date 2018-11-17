@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import NewCity from "../NewCity";
@@ -8,7 +9,8 @@ import NewNote from "../NewNote";
 const List = props => {
     return (
         <div>
-            {props.user.list.length == 0 ? `You do not currently have any cities on your list.` :
+            <p>Hi!</p>
+            {/* {props.user.list.length === 0 ? `You do not currently have any cities on your list.` :
                 <Collapsible popout>
                     {props.user.list.map(item => {
                         return (
@@ -19,7 +21,7 @@ const List = props => {
                                     <li>Weather:</li>
                                     <li>Current News:</li>
                                 </ul>
-                                {item.notes.length == 0 ? `You do not currently have any notes.` : item.notes.map(note => {
+                                {item.notes.length === 0 ? `You do not currently have any notes.` : item.notes.map(note => {
                                     return (<p key={note}>{note}</p>)
                                 })}
                                 <NewNote />
@@ -28,10 +30,10 @@ const List = props => {
                         );
                     })}
                 </Collapsible>
-            }
+            } */}
 
 
-            <NewCity />
+            {/* <NewCity /> */}
         </div>
     );
 };
