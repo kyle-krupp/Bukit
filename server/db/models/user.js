@@ -11,7 +11,21 @@ const userSchema = new Schema({
 	},
 	google: {
 		googleId: { type: String, required: false }
-	}
+	},
+	lists: [
+
+		{
+			cityName: { type: String, unique: false, required: false},
+			visited: { type: Boolean, unique: false, required: false},
+			notes: [
+	
+				{
+					note: { type: String, unique: false, required: false}
+				}
+	
+			]
+		}
+	]
 })
 
 // Define schema methods

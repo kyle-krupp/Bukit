@@ -64,7 +64,10 @@ router.post('/signup', (req, res) => {
 		}
 		const newUser = new User({
 			'local.username': username,
-			'local.password': password
+			'local.password': password,
+			//'lists.cityName': cityName,
+			//'lists.visited': visited,
+			//'lists.notes': notes
 		})
 		newUser.save((err, savedUser) => {
 			if (err) return res.json(err)
