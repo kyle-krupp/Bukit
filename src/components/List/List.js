@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
-import NewCity from "../NewCity";
 import NewNote from "../NewNote";
+
 
 
 const List = props => {
@@ -30,7 +30,7 @@ const List = props => {
                         );
                     })}
                 </Collapsible>
-            } 
+             }
         </div>
     );
 };

@@ -36,7 +36,7 @@ router.post(
 		const user = JSON.parse(JSON.stringify(req.user)) // hack
 		const cleanUser = Object.assign({}, user)
 		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
+			console.log('Deleting ${cleanUser.local.password}')
 			delete cleanUser.local.password
 		}
 		res.json({ user: cleanUser })
@@ -54,7 +54,7 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-	const { username, password } = req.body
+	const { username, password, cityName } = req.body
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
 		if (userMatch) {
@@ -65,9 +65,7 @@ router.post('/signup', (req, res) => {
 		const newUser = new User({
 			'local.username': username,
 			'local.password': password,
-			//'lists.cityName': cityName,
-			//'lists.visited': visited,
-			//'lists.notes': notes
+			'lists.cityName': cityName
 		})
 		newUser.save((err, savedUser) => {
 			if (err) return res.json(err)
