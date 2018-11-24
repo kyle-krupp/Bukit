@@ -7,7 +7,6 @@ import SignupForm from './components/SignupForm'
 import Header from './components/Header'
 import Home from './components/Home'
 import ListPage from './components/ListPage'
-import user from './components/user.json';
 import NewCity from './components/NewCity';
 
 const DisplayLinks = props => {
@@ -140,7 +139,8 @@ class App extends Component {
 						/>}
 				/>
 				<Route exact path="/signup" component={SignupForm} />
-				<Route exact path="/dashboard" component={ListPage}/>
+				<Route exact path="/dashboard" render={() => <ListPage user={this.state.user} />}
+				/>
 				{/* <LoginForm _login={this._login} /> */}
 			</div>
 		)
