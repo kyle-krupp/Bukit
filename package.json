@@ -28,12 +28,12 @@
 		"react-scripts": "1.0.7"
 	},
 	"scripts": {
-		"start": "PORT=3006 && node server/server.js",
+		"start": "PORT=3000 && node server/server.js",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
 		"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
-		"prod": "export PORT=3006 && nodemon server/server.js"
+		"prod": "export PORT=3000 && nodemon server/server.js"
 	},
 	"proxy": "http://localhost:8080"
 }

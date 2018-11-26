@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
-import NewCity from "../NewCity";
 import NewNote from "../NewNote";
+
 
 
 const List = props => {
     return (
         <div>
             <p>Hi!</p>
-            {/* {props.user.list.length === 0 ? `You do not currently have any cities on your list.` :
+             {props.user.lists.length === 0 ? `You do not currently have any cities on your list.` :
                 <Collapsible popout>
-                    {props.user.list.map(item => {
+                    {props.user.lists.map(item => {
                         return (
                             <CollapsibleItem key={item.city} header={item.city} icon={item.visited ? 'check_box' : 'check_box_outline_blank'}>
                                 <h5>Here's some info on {item.city}!</h5>
@@ -30,10 +30,7 @@ const List = props => {
                         );
                     })}
                 </Collapsible>
-            } */}
-
-
-            {/* <NewCity /> */}
+             }
         </div>
     );
 };
