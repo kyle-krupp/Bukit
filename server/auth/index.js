@@ -27,7 +27,7 @@ router.get('/user', (req, res, next) => {
 
 router.post(
 	'/login',
-	function(req, res, next) {
+	function (req, res, next) {
 		console.log(req.body)
 		console.log('================')
 		next()
@@ -56,7 +56,7 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-	const { username, password} = req.body
+	const { username, password } = req.body
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
 		if (userMatch) {
@@ -73,26 +73,44 @@ router.post('/signup', (req, res) => {
 			return res.json(savedUser)
 		})
 	})
-	const {city} = req.body
+	const { city } = req.body
 	const newLocation = new Location({
 		'city': city,
 		'visited': false,
 		'notes': []
 	})
 	Location.create(newLocation)
-	.then(function(dbLocation){
-		return User.findOneAndUpdate({'local.username': username}, { $push: {locations: dbLocation._id}}, {new: true});
-	})
-	.then(function(dbUser){
-		console.log(dbUser);
-		res.json(dbUser);
-	})
-	.catch(function(err){
-		res.json(err);
-	});
-	
+		.then(function (dbLocation) {
+			return User.findOneAndUpdate({ 'local.username': username }, { $push: { locations: dbLocation._id } }, { new: true });
+		})
+		.then(function (dbUser) {
+			console.log(dbUser);
+			res.json(dbUser);
+		})
+		.catch(function (err) {
+			res.json(err);
+		});
 
- });
+
+})
+
+router.post('/', (req, res) => {
+	const newNote = new Note({
+		'body': 'here is a note'
+	})
+	Note.create(newNote)
+		.then(function (dbNote) {
+			return User.findOneAndUpdate({ 'local.username': username }, { $push: { Note: dbNote._id } }, { new: true })
+		})
+		.then(function (dbUser) {
+			console.log(dbUser);
+			res.json(dbUser);
+		})
+		.catch(function (err) {
+			res.json(err);
+		})
+
+})
 
 
 module.exports = router
