@@ -12,14 +12,14 @@ const userSchema = new Schema({
 	google: {
 		googleId: { type: String, required: false }
 	},
-	lists:
-
+	locations: [
 		{
-			cityName: { type: String, unique: false, required: false },
-			notes:{ note: { type: String, unique: false, required: false, default: 'example note' }
-			}
-
+		  // Store ObjectIds in the array
+		  type: Schema.Types.ObjectId,
+		  // The ObjectIds will refer to the ids in the Note model
+		  ref: "Location"
 		}
+	  ]
 
 })
 
