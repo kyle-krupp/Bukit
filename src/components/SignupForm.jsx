@@ -9,7 +9,7 @@ class SignupForm extends Component {
 			username: '',
 			password: '',
 			confirmPassword: '',
-			cityName:'',
+			city:'',
 			redirectTo: null
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,7 +27,7 @@ class SignupForm extends Component {
 			.post('/auth/signup', {
 				username: this.state.username,
 				password: this.state.password,
-				cityName: this.state.cityName
+				city: this.state.city
 
 			})
 			.then(response => {
@@ -70,11 +70,11 @@ class SignupForm extends Component {
 					value={this.state.confirmPassword}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="cityName">Where do you want to go?</label>
+				<label htmlFor="city">Where do you want to go?</label>
 				<input
 					type="text"
-					name="cityName"
-					value={this.state.cityName}
+					name="city"
+					value={this.state.city}
 					onChange={this.handleChange}
 				/>
 				<button onClick={this.handleSubmit}>Sign up</button>
