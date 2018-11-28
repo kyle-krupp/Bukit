@@ -3,7 +3,7 @@
 # Bukit List
 
 ## Your new personal trip planner and travel log
-## The Bukit Team:
+### The Bukit Team:
 Ryan Foss, Peter Grieve, Andrew Harding, Kyle Krupp
 
 [**Live Link**](https://www.google.com)
