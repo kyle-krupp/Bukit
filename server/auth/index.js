@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../db/models/user')
+const Location = require('../db/models/Location')
+const Note = require('../db/models/Note')
 const passport = require('../passport')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
@@ -25,7 +27,7 @@ router.get('/user', (req, res, next) => {
 
 router.post(
 	'/login',
-	function(req, res, next) {
+	function (req, res, next) {
 		console.log(req.body)
 		console.log('================')
 		next()
@@ -54,7 +56,7 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-	const { username, password, cityName } = req.body
+	const { username, password } = req.body
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
 		if (userMatch) {
@@ -64,14 +66,51 @@ router.post('/signup', (req, res) => {
 		}
 		const newUser = new User({
 			'local.username': username,
-			'local.password': password,
-			'lists.cityName': cityName
+			'local.password': password
 		})
 		newUser.save((err, savedUser) => {
 			if (err) return res.json(err)
 			return res.json(savedUser)
 		})
 	})
+	const { city } = req.body
+	const newLocation = new Location({
+		'city': city,
+		'visited': false,
+		'notes': []
+	})
+	Location.create(newLocation)
+		.then(function (dbLocation) {
+			return User.findOneAndUpdate({ 'local.username': username }, { $push: { locations: dbLocation._id } }, { new: true });
+		})
+		.then(function (dbUser) {
+			console.log(dbUser);
+			res.json(dbUser);
+		})
+		.catch(function (err) {
+			res.json(err);
+		});
+
+
 })
+
+router.post('/', (req, res) => {
+	const newNote = new Note({
+		'body': 'here is a note'
+	})
+	Note.create(newNote)
+		.then(function (dbNote) {
+			return User.findOneAndUpdate({ 'local.username': username }, { $push: { Note: dbNote._id } }, { new: true })
+		})
+		.then(function (dbUser) {
+			console.log(dbUser);
+			res.json(dbUser);
+		})
+		.catch(function (err) {
+			res.json(err);
+		})
+
+})
+
 
 module.exports = router
