@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 
 const NoteSchema = new Schema ({
-    body: String
+    note: String
 })
 
 // This creates our model from the above schema, using mongoose's model method

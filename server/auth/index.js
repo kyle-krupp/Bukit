@@ -5,7 +5,7 @@ const Location = require('../db/models/Location')
 const Note = require('../db/models/Note')
 const passport = require('../passport')
 
-router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 router.get(
 	'/google/callback',
 	passport.authenticate('google', {
@@ -15,7 +15,7 @@ router.get(
 )
 
 // this route is just used to get the user basic info
-router.get('/user', (req, res, next) => {
+router.get('/auth/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
 	if (req.user) {
@@ -26,7 +26,7 @@ router.get('/user', (req, res, next) => {
 })
 
 router.post(
-	'/login',
+	'/auth/login',
 	function (req, res, next) {
 		console.log(req.body)
 		console.log('================')
@@ -45,7 +45,7 @@ router.post(
 	}
 )
 
-router.post('/logout', (req, res) => {
+router.post('/auth/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
 		res.clearCookie('connect.sid') // clean up!
@@ -55,7 +55,7 @@ router.post('/logout', (req, res) => {
 	}
 })
 
-router.post('/signup', (req, res) => {
+router.post('/auth/signup', (req, res) => {
 	const { username, password } = req.body
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
@@ -94,13 +94,16 @@ router.post('/signup', (req, res) => {
 
 })
 
-router.post('/', (req, res) => {
+////  this is where non-auth routes start /////
+
+router.post('/api', (req, res) => {
+	const {note} = req.body
 	const newNote = new Note({
-		'body': 'here is a note'
+		'note': note
 	})
 	Note.create(newNote)
 		.then(function (dbNote) {
-			return User.findOneAndUpdate({ 'local.username': username }, { $push: { Note: dbNote._id } }, { new: true })
+			return User.findOneAndUpdate({ 'local.username': username }, { $push: { Note: newNote} }, { new: true })
 		})
 		.then(function (dbUser) {
 			console.log(dbUser);
@@ -112,5 +115,24 @@ router.post('/', (req, res) => {
 
 })
 
+
+router.get("/api", function(req,res) {
+	User.find()
+	.populate({
+		path:"locations",
+		model:"Location"
+	})
+	.populate({
+		path:"notes",
+		path:"Note"
+	})
+	.then(function(dbUser) {
+		res.json(dbUser);
+		console.log('hooooooooray ' + JSON.stringify(dbUser));
+	})
+	.catch(function(err){
+		res.json(err)
+	});
+});
 
 module.exports = router
