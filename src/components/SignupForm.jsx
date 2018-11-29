@@ -10,6 +10,7 @@ class SignupForm extends Component {
 			password: '',
 			confirmPassword: '',
 			city:'',
+			notes:'',
 			redirectTo: null
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,7 +28,8 @@ class SignupForm extends Component {
 			.post('/auth/signup', {
 				username: this.state.username,
 				password: this.state.password,
-				city: this.state.city
+				city: this.state.city,
+				notes: this.state
 
 			})
 			.then(response => {
