@@ -26,15 +26,19 @@
   "concurrently": "^3.6.1",
   "react-scripts": "^2.1.1"
   },
-  "scripts": {
-    "start": "PORT=3000 && node server/server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
-    "prod":  "set NODE_ENV='production' && node server/server.js"
-  },
-  "proxy": "http://localhost:8080",
+  "devDependencies": {
+	"concurrently": "^3.5.0",
+	"react-scripts": "1.0.7"
+},
+"scripts": {
+	"start": "export NODE_ENV=\"production\" && node server/server.js",
+	"build": "react-scripts build",
+	"test": "react-scripts test --env=jsdom",
+	"eject": "react-scripts eject",
+	"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
+	"prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
+},
+	"proxy": "http://localhost:8080",
   "browserslist": [
     ">0.2%",
     "not dead",
