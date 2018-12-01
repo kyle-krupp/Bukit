@@ -23,9 +23,9 @@ const List = props => {
                                         <li>Weather:</li>
                                         <li>Current News:</li>
                                     </ul>
-                                    {item.locations.notes.length === 0 ? `You do not currently have any notes.` : item.locations.notes.map(note => {
+                                    {/* {item.locations.notes.length === 0 ? `You do not currently have any notes.` : item.locations.notes.map(note => {
                                         return (<p key={note}>{note}</p>)
-                                    })}
+                                    })} */}
                                     <NewNote />
                                     <Button waves='light' onClick={() => console.log('remove city')}>Remove City<Icon right>delete</Icon></Button>
                                 </CollapsibleItem>
