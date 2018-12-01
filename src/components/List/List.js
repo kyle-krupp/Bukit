@@ -12,8 +12,6 @@ const List = props => {
 
         return (
             <div>
-                <p>Hi!</p>
-                
                 {props.user.locations.length === 0 ? `You do not currently have any cities on your list.` :
                     <Collapsible popout>
                         {props.user.locations.map(item => {
@@ -31,6 +29,7 @@ const List = props => {
                                         return (<p key={note}>{note}</p>)
                                     })} */}
                                     <NewNote />
+                                    <hr></hr>
                                     <Button waves='light' onClick={() => console.log('remove city')}>Remove City<Icon right>delete</Icon></Button>
                                 </CollapsibleItem>
                             );

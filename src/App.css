@@ -1,4 +1,4 @@
-.App {
+.Header {
   text-align: center;
 }
 
@@ -22,12 +22,6 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.nav{
-  background-color: #fbc02d;
-}
-.navbar {
-  background-color:#fbc02d;
-}
 
 nav {
   background-color: #2196F3;
@@ -40,8 +34,23 @@ nav {
   text-shadow: 1px 1px 5px #000000;
 }
 
+.btn {
+  background-color: #2196F3;
+  color: aliceblue;
+}
 
+.btn:hover {
+  background-color: rgb(7, 117, 207);
+}
 
-.body {
-  background-image: url(https://media.giphy.com/media/3o6ZtelrVAOD5EcmCQ/giphy.gif);
+.btn:focus{
+  background-color: #2196F3;
+}
+
+.logo {
+  max-width: 100%;
+}
+
+.card-panel {
+  vertical-align: center;
 }
