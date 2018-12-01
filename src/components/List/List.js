@@ -3,7 +3,8 @@ import { Redirect } from 'react-router-dom'
 import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import NewNote from "../NewNote";
-import News from "./News"
+import News from "./News";
+import Weather from "./Weather";
 
 
 
