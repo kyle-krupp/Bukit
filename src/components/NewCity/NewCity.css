@@ -1,0 +1,12 @@
+.btn {
+    background-color: #2196F3;
+    color: aliceblue;
+}
+
+.btn:hover {
+    background-color: rgb(7, 117, 207);
+}
+
+.btn:focus{
+    background-color: #2196F3;
+}
