@@ -17,7 +17,7 @@ const List = props => {
                         {props.user.locations.map(item => {
                             return (
                                 <CollapsibleItem key={item.city} header={item.city} icon={item.visited ? 'check_box' : 'check_box_outline_blank'}>
-                                    <h5>Here's some info on {item.city}!</h5>
+                                    <h5>Here's some info on New York City!</h5>
                                     {item.visited ? `You have visited ${item.city}!` : `You have not visited ${item.city} yet!`}
                                     <ul>
                                         <li>Weather:</li>

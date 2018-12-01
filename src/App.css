@@ -54,3 +54,9 @@ nav {
 .card-panel {
   vertical-align: center;
 }
+
+body {
+  background-image: url(./components/assets/images/topography.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

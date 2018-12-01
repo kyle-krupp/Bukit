@@ -20,7 +20,7 @@ const Home = props => {
 					</div>
 					<div className="col m6">
 						<div className="card-panel blue">
-							<span className="white-text">Want to pin future destinations and keep tabs on the area? Bukit! </span>
+							<span className="white-text"><h5>Want to pin future destinations and keep tabs on the area?<b><i> Bukit! </i></b></h5></span>
 
 							<br />
 							<br />
