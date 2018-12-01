@@ -36,7 +36,7 @@ class LoginForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		} else {
 			return (
-				<div className="LoginForm">
+				<div className="LoginForm container center-align">
 					<h1>Login:</h1>
 					<form>
 						<label htmlFor="username">Username: </label>
