@@ -3,7 +3,8 @@ import { Redirect } from 'react-router-dom'
 import "./List.css";
 import { Button, Collapsible, CollapsibleItem, Icon } from "react-materialize";
 import NewNote from "../NewNote";
-import News from "./News"
+import News from "./News";
+// import Weather from "./Weather";
 
 
 
@@ -20,7 +21,7 @@ const List = props => {
                                     {item.visited ? `You have visited ${item.city}!` : `You have not visited ${item.city} yet!`}
                                     <ul>
                                         <li>Weather:</li>
-                                        <div><Weather city={item.city} /></div>
+                                        {/* <div><Weather city={item.city} /></div> */}
                                         <li><h4>Local News:</h4></li>
                                         <div><News city={item.city} /></div>
                                     </ul>
