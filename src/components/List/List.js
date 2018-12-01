@@ -22,6 +22,7 @@ const List = props => {
                                     {item.visited ? `You have visited ${item.city}!` : `You have not visited ${item.city} yet!`}
                                     <ul>
                                         <li>Weather:</li>
+                                        <div><Weather city={item.city} /></div>
                                         <li><h4>Local News:</h4></li>
                                         <div><News city={item.city} /></div>
                                     </ul>
