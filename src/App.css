@@ -29,6 +29,17 @@
   background-color:#fbc02d;
 }
 
+nav {
+  background-color: #2196F3;
+  background-image: url(./components/assets/images/adventure-alps-amazing-552785.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-shadow: 1px 1px 5px #000000;
+}
+
 
 
 .body {
