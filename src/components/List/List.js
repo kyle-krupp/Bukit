@@ -23,7 +23,11 @@ const List = props => {
                                         <li>Weather:</li>
                                         <li>Current News:</li>
                                     </ul>
+<<<<<<< HEAD
                                     {/* {item.locations.notes.length === 0 ? `You do not currently have any notes.` : item.locations.notes.map(note => {
+=======
+                                    {/* {item.notes.length === 0 ? `You do not currently have any notes.` : item.notes.map(note => {
+>>>>>>> a1bd15c51bb1d268c9ccfa8927d01bebe791f9ca
                                         return (<p key={note}>{note}</p>)
                                     })} */}
                                     <NewNote />

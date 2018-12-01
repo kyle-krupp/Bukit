@@ -9,12 +9,7 @@ var Schema = mongoose.Schema;
 var LocationSchema = new Schema({
   city: String,
   visited: Boolean,
-  notes: [
-      {
-          type: Schema.Types.ObjectId,
-          ref: "Note"
-      }
-  ]
+  notes: []
 });
 
 // This creates our model from the above schema, using mongoose's model method
