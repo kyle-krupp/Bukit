@@ -14,7 +14,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://newsapi.org/v2/everything?q=" + this.props.city + "&pageSize=3&apiKey=e98708c0ae604c1c80859a0725b9b24a")
+        fetch("https://newsapi.org/v2/everything?q=" + "New York City" + "&pageSize=3&apiKey=e98708c0ae604c1c80859a0725b9b24a")
             .then(res => res.json())
             .then(
                 (result) => {
