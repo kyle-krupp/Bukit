@@ -8,22 +8,23 @@ class Weather extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            items: [],
-            temperature: ""
+            icon: "",
+            temperature: "",
+            description: ""
         };
     }
 
-    componentDidMount() {
-        fetch("http://api.openweathermap.org/data/2.5/weather?q=" + "New York" + ",us&appid=70439c79cebf51416398a33b121030b1&units=imperial")
+     componentDidMount() {
+         fetch("https://api.apixu.com/v1/current.json?key=c8970619fa04431fad5233603180112&q=New York")
             .then(res => res.json())
             .then(
                 (result) => {
                     console.log(result);
                     this.setState({
                         isLoaded: true,
-                        items: result.weather,
-                        temperature: result.main.temp
-                       
+                        icon: result.current.condition.icon,
+                        temperature: result.current.temp_f,
+                       description: result.current.condition.text
                     });
                     // console.log(conditions);
                 },
@@ -55,12 +56,14 @@ class Weather extends React.Component {
                 
                             </li>
                             <li>
-                                <img className="weatherImage" src={'http://openweathermap.org/img/w/'+this.state.items[0].icon +'.png'} width="100" height="75" alt="weather-icon"></img>
+
+                                <img className="weatherImage" src={this.state.icon} width="100" height="75" alt="weather-icon"></img>
+                                {/* <img className="weatherImage" src={'http://openweathermap.org/img/w/'+this.state.items[0].icon +'.png'} width="100" height="75" alt="weather-icon"></img> */}
                                 
                             </li>
                             
                             <li>Temperature: {this.state.temperature}&deg;F</li>
-                                <li>  Description: {this.state.items[0].description}</li>
+                                <li>  Description: {this.state.description}</li>
                         
                         </ul>
                    
