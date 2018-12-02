@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png'
-import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
-
+import { Icon } from 'react-materialize'
 class LoginForm extends Component {
 	constructor() {
 		super()
@@ -37,16 +35,19 @@ class LoginForm extends Component {
 		} else {
 			return (
 				<div className="LoginForm container center-align">
-					<h1>Login:</h1>
+					<h3>Login:</h3>
+					<p><Icon small>verified_user</Icon></p>
 					<form>
-						<label htmlFor="username">Username: </label>
+						<label htmlFor="username"><p>Username:</p> 
+				<p><Icon small>person_outline</Icon></p></label>
 						<input
 							type="text"
 							name="username"
 							value={this.state.username}
 							onChange={this.handleChange}
 						/>
-						<label htmlFor="password">Password: </label>
+						<label htmlFor="password"><p>Password:</p> 
+				<p><Icon small></Icon></p></label>
 						<input
 							type="password"
 							name="password"
@@ -55,10 +56,10 @@ class LoginForm extends Component {
 						/>
 						<button onClick={this.handleSubmit}>Login</button>
 					</form>
-					<a href="/auth/google">
+					{/* <a href="/auth/google"> */}
 						{/* <GoogleButton /> */}
-						<img src={googleButton} alt="sign into Google Button" />
-					</a>
+						{/* <img src={googleButton} alt="sign into Google Button" />
+					</a> */}
 				</div>
 			)
 		}

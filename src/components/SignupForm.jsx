@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import { Icon } from 'react-materialize'
 
 class SignupForm extends Component {
 	constructor() {
@@ -49,30 +50,34 @@ class SignupForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		}
 		return (
-			<div className="SignupForm">
+			<div className="LoginForm container center-align">
 				<h1>Signup</h1>
-				<label htmlFor="username">Username: </label>
+				<label htmlFor="username"><p>Username:</p> 
+				<p><Icon small>person_outline</Icon></p></label>
 				<input
 					type="text"
 					name="username"
 					value={this.state.username}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="password">Password: </label>
+				<label htmlFor="password"><p>Password:</p> 
+				<p><Icon small>vpn_key</Icon></p></label>
 				<input
 					type="password"
 					name="password"
 					value={this.state.password}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="confirmPassword">Confirm Password: </label>
+				<label htmlFor="confirmPassword"><p>Confirm Password:</p> 
+				<p><Icon small>vpn_key</Icon></p></label>
 				<input
 					type="password"
 					name="confirmPassword"
 					value={this.state.confirmPassword}
 					onChange={this.handleChange}
 				/>
-				<label htmlFor="city">Where do you want to go?</label>
+				<label htmlFor="city"> <p>Where do you want to go?</p> 
+				<p><Icon small>location_city</Icon></p></label>
 				<input
 					type="text"
 					name="city"
