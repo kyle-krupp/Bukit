@@ -6,7 +6,7 @@
 ### The Bukit Team:
 Ryan Foss, Peter Grieve, Andrew Harding, Kyle Krupp
 
-[**Live Link**](https://www.google.com)
+[**Live Link**](https://bukitlist.herokuapp.com/)
 
 We all have places that we’d like to see, things we’d like to do. Bukit list is here to help you make future travel plans and document old ones!
 
