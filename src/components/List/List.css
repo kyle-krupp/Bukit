@@ -1,4 +1,8 @@
-.note-item{
+li {
+    vertical-align: middle;
+}
+
+.note-item {
     background-color: rgb(240, 240, 240);
     padding: 10px;
     margin: 5px;

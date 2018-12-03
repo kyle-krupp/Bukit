@@ -57,7 +57,7 @@ class Weather extends React.Component {
                             </li>
                             <li>
 
-                                <img className="weatherImage" src={this.state.icon} width="100" height="75" alt="weather-icon"></img>
+                                <img className="weatherImage" src={this.state.icon} width="75" alt="weather-icon"></img>
                                 {/* <img className="weatherImage" src={'http://openweathermap.org/img/w/'+this.state.items[0].icon +'.png'} width="100" height="75" alt="weather-icon"></img> */}
                                 
                             </li>
