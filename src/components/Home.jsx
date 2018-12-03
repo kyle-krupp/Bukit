@@ -24,7 +24,7 @@ const Home = props => {
 
 							<br />
 
-							<span className="white-text">Bukit is an organizer for places you’ve been and places you want to go.
+							<span className="white-text">Bukit List is an organizer for places you’ve been and places you want to go.
 					Taking vacations or traveling can be complicated, there are so many pieces of information you need to keep tabs on for your destination —
 What is the weather usually like there? What kind of events occur in the area?</span>
 
