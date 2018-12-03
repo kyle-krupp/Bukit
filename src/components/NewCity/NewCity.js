@@ -22,7 +22,7 @@ class NewCity extends React.Component {
         return (
             <Modal
                 header='Add a New City to Your List'
-                trigger={<Button floating large className='red' waves='light' icon='add' />}>
+                trigger={<Button floating large className='blue' waves='light' icon='add' />}>
                 <Row>
                     <Input
                         name="city"

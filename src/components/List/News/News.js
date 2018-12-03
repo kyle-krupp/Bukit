@@ -53,7 +53,7 @@ class News extends React.Component {
                                 </h5>
                             </li>
                             <li>
-                                <img class="articleImage" src={item.urlToImage} width="100" height="75"></img>
+                                <img className="articleImage" src={item.urlToImage} width="200"></img>
                             </li>
                             <li>
                                 <Moment format="MM/DD/YYYY">
@@ -61,8 +61,9 @@ class News extends React.Component {
                                 </Moment>
                             </li>
                             <li>
-                                <a href={item.url}>Read Here</a>
+                                <a href={item.url} target="_blank">Read Here</a>
                             </li>
+                            <hr></hr>
                         </ul>
                     ))}
                 </div>
