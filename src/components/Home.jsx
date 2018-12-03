@@ -20,7 +20,9 @@ const Home = props => {
 					</div>
 					<div className="col m6">
 						<div className="card-panel blue">
-							<h5 className="white-text">Want to pin future vacation destinations and keep tabs on the area? Bukit! </h5>
+							<span className="white-text"><h5>Want to pin future destinations and keep tabs on the area?<b><i> Bukit! </i></b></h5></span>
+
+							<br />
 							<br />
 
 							<span className="white-text">Bukit is an organizer for places you’ve been and places you want to go.
