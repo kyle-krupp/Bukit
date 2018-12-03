@@ -23,7 +23,6 @@ const Home = props => {
 							<span className="white-text"><h5>Want to pin future destinations and keep tabs on the area?<b><i> Bukit! </i></b></h5></span>
 
 							<br />
-							<br />
 
 							<span className="white-text">Bukit is an organizer for places you’ve been and places you want to go.
 					Taking vacations or traveling can be complicated, there are so many pieces of information you need to keep tabs on for your destination —
