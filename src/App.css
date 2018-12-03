@@ -32,6 +32,7 @@ nav {
   padding-left: 15px;
   padding-right: 15px;
   text-shadow: 1px 1px 5px #000000;
+  font-family: 'IM Fell Great Primer', serif;
 }
 
 .btn {
@@ -54,9 +55,11 @@ nav {
 .card-panel {
   vertical-align: center;
 }
-/* 
+
 body {
-  background-image: url(./components/assets/images/topography.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+  background-image: url(./components/assets/images/topography2.png);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IM Fell Great Primer', serif;
+}
